@@ -1,11 +1,7 @@
 import paho.mqtt.client as mqtt
-from flask import Flask, request, make_response, render_template, url_for, g
+from flask import Flask, request, render_template, url_for
 from flask import send_from_directory, jsonify
 from flask_restful import Resource, Api
-
-
-
-
 
 
 #Set Parameters
@@ -14,7 +10,7 @@ server = '' #MQTT Broker Address
 port = 1883 #MQTT Broker Port
 user = '' #MQTT Broker Username
 passw = '' #MQTT Broker Password
-zanzitoDevice = '' #Name tou gave your device in zanzito settings
+zanzitoDevice = '' #Name you gave your device in zanzito settings
 
 def sendSms(phone_number,message):
     client = mqtt.Client("smsSender")
@@ -51,19 +47,6 @@ def send_js(path):
 @app.route('/css/<path:path>')
 def send_css(path):
     return send_from_directory('dist/css', path)
-
-# Serve Images
-@app.route('/img/<path:path>')
-def send_img(path):
-    return send_from_directory('dist/img', path)
-
-# Serve Fonts
-@app.route('/webfonts/<path:path>')
-def send_webfonts(path):
-    return send_from_directory('dist/webfonts', path)
-
-# endregion
-
 
 
 # Start Application
