@@ -2,4 +2,4 @@
   flask_restful
   loguru
   requests
-cryptography==41.0.2
+cryptography==43.0.1
