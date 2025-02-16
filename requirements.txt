@@ -2,6 +2,6 @@
   flask_restful
   loguru
   requests
-cryptography==43.0.1
+cryptography==44.0.1
 werkzeug>=3.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
 urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
